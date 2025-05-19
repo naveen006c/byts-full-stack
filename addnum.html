@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="D:\learn\task\task1\download.png">
+    <title>add</title>
+</head>
+<style>
+    ul{
+        display: flex;
+        text-decoration: none;
+        justify-content: space-between;
+        font-size: medium;
+        list-style-type: none;
+
+    }
+    .watch{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aqua;
+        background-image: url('./af89bdbb0c29110f0b63439241d7270d.jpg');
+        
+    }
+    .ans{
+        background: none;
+        color: black;
+    }
+    fieldset{
+        background-color: rgba(250, 235, 215, 0.466);
+        background-size: cover;
+        font-size: x-large;
+        box-shadow: 10px 10px 5px;
+    }
+    .add{
+        color: rgb(0, 0, 0);
+        padding-left: 20px;
+        padding-right: 15px;
+    }
+    a{
+        text-decoration: none;
+    }
+</style>
+<body>
+    <fieldset>
+    <header>
+        <ul>
+       
+            <a href="./home.html"><li>Home </li> </a>
+            <a href="./addnum.html" target="_blank"><li>Sum</li></a>
+            <a href="./stopwatch.html" target="_blank"><li>stopWatch</li></a>
+            <a href="./cel to far.html" target="_blank"><li>Celsius to Fahrenheit Converter</li></a>
+            <a href="./calcu.html" target="_blank"><li>Calculator</li></a>
+        </ul>
+    </header>
+</fieldset>
+    
+    <div class="watch">
+    <center>
+    <fieldset>
+    <h1>Addition</h1>
+    <label for="num1">Number1</label><br>
+    <input type="number" name="num1" id="num1"><br>
+    <label for="num2">Number2</label><br>
+    <input type="number" name="num2" id="num2"><br>
+    <button class="add" onclick="addnum()">Add</button>
+    <button onclick="window.location.reload();">🔄️</button>
+    <p id="res"></p>
+</fieldset>
+</div>
+    
+    </center>
+
+    <script>
+    function addnum(){
+      const n1 = parseFloat(document.getElementById('num1').value);
+      const n2 = parseFloat(document.getElementById('num2').value);
+      const sum = n1 + n2;
+      document.getElementById('res').innerText = 'Addition ' + sum;
+    }
+
+    </script>
+</body>
+</html>

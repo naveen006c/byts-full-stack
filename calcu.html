@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./calicon.jpg">
+    <title>Calculator App</title>
+<style>
+    ul{
+        display: flex;
+        text-decoration: none;
+        justify-content: space-between;
+        font-size: medium;
+        list-style-type: none;
+        
+    }
+    .cac{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(65, 116, 155);
+        background-image: url('./math.webp');
+        background-size:cover;
+    }
+    .button{
+        font-size: xx-large;
+        padding: 10px 20px;
+        margin-bottom:10px ;
+
+    }
+    fieldset{
+        color: rgb(255, 255, 255);
+        font-size: xx-large;
+        box-shadow: 10px 10px 5px transparenta;
+    }
+
+    input{
+        width:200px;
+    }
+    .small{
+        padding: 10px 23px;
+    }
+    .head{
+        background-color: rgb(237, 216, 190);
+        font-size: small;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+</style>
+</head>
+<body>
+    <div class="head">
+    <fieldset>
+    <header>
+        <ul>
+            <a href="./home.html"><li>Home </li> </a>
+            <a href="./addnum.html" target="_blank"><li>Sum</li></a>
+            <a href="./stopwatch.html" target="_blank"><li>stopWatch</li></a>
+            <a href="./cel to far.html" target="_blank"><li>Celsius to Fahrenheit Converter</li></a>
+            <a href="./calcu.html" target="_blank"><li>Calculator</li></a>
+        </ul>
+    </header>
+</fieldset>
+</div>
+   <div class="cac">
+    <fieldset>
+        <legend>Calculator</legend>
+    <div class="calculator">
+        <input type="text" class="screen" id="screen" disabled>
+        <button class="button clear" onclick="clearScreen()">C</button>
+        <div class="buttons">
+            <button class="button" onclick="appendToScreen('1')">1</button>
+            <button class="button" onclick="appendToScreen('2')">2</button>
+            <button class="button" onclick="appendToScreen('3')">3</button>
+            <button class="button operator " onclick="appendToScreen('+')">+</button>
+        <br>
+        <button class="button" onclick="appendToScreen('4')">4</button>
+        <button class="button" onclick="appendToScreen('5')">5</button>
+        <button class="button" onclick="appendToScreen('6')">6</button>
+        <button class="button operator small" onclick="appendToScreen('-')">-</button>
+        <br>
+        <button class="button" onclick="appendToScreen('7')">7</button>
+       <button class="button" onclick="appendToScreen('8')">8</button>
+       <button class="button" onclick="appendToScreen('9')">9</button>
+       <button class="button operator small" onclick="appendToScreen('/')">/</button>
+       <br>
+            <button class="button operator small" onclick="appendToScreen('*')"> * </button>
+            <button class="button" onclick="appendToScreen('0')">0</button>
+            <button class="button small" onclick="appendToScreen('.')"> . </button>
+            <button class="button equal" onclick="calculate()">=</button>
+        </div>
+    </div>
+</fieldset>
+</div>
+
+
+    <script>
+        function clearScreen() {
+            document.getElementById('screen').value = '';
+        }
+
+
+        function appendToScreen(value) {
+            document.getElementById('screen').value += value;
+        }
+
+
+        function calculate() {
+            let expression = document.getElementById('screen').value;
+            try {
+                let result = eval(expression);
+                document.getElementById('screen').value = result;
+            } catch (e) {
+                document.getElementById('screen').value = 'Error';
+            }
+        }
+    </script>
+
+
+</body>
+</html>

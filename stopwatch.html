@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="D:\learn\task\task1\stopwatch.svg">
+    <title>StopWatch</title>
+</head>
+<style>
+    ul{
+        display: flex;
+        text-decoration: none;
+        justify-content: space-between;
+        font-size: medium;
+        list-style-type: none;
+
+    }
+    
+    .cal{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: antiquewhite;
+        box-shadow: 10px 10px 5px;
+        border-color: rgba(1, 8, 15, 0.684);
+       background-image: url('./athlete-running-i186819.jpg');
+        background-size: cover;
+        font-size:xx-large;
+        
+    }
+    .st{
+        background-color: rgba(250, 235, 215, 0.434);
+        background: none;
+         
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+</style>
+<body>
+    <div class="st">
+    <fieldset>
+    <header>
+        <ul>
+            <a href="./home.html"><li>Home </li> </a>
+            <a href="./addnum.html" target="_blank"><li>Sum</li></a>
+            <a href="./stopwatch.html" target="_blank"><li>stopWatch</li></a>
+            <a href="./cel to far.html" target="_blank"><li>Celsius to Fahrenheit Converter</li></a>
+            <a href="./calcu.html" target="_blank"><li>Calculator</li></a>
+        </ul>
+    </header>
+    </fieldset>
+    </div>
+
+   <div class="cal">
+    <center>
+        <fieldset>
+        <h1>StopWatch</h1>
+        <p id="res">00:00:00</p>
+        <button onclick="start()">start</button>
+        <button onclick="stop()">stop</button>
+        <button onclick="reset()">reset</button>
+        </fieldset>
+    </center>
+    </div>
+
+    <script>
+        var st=0;
+        let m=null;
+        var min=0,sec=0,h=0;
+        function start(){
+            if(m !== null) return;
+           m= setInterval(() => {
+                if(sec==60){
+                    sec=0;
+                    min+=1;
+                }
+                if(min==60){
+                    min=0;
+                    h+=1;
+                }
+                sec++;
+                document.getElementById ('res').textContent= h+":"+min+":"+sec;
+
+            }, 1000);
+        }
+        function stop(){
+            clearInterval(m);
+            m=null;
+        }
+        function reset(){
+            sec=0;
+            min=0;
+            h=0;
+            document.getElementById ('res').textContent= h+":"+min+":"+sec;
+            clearInterval(m);
+
+        }
+    </script>
+</body>
+</html>
